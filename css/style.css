@@ -1,0 +1,242 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+
+:root {
+    --bodyBg: #f7fafe;
+    --primaryColor: #1a5af5;
+    --titleColor: #141f3d;
+    --paragraphColor: #99a0b1;
+}
+
+/*  reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bodyBg);
+    padding: .625rem;
+}
+
+.main {}
+
+.price {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.price__title {
+    color: var(--titleColor);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.price__paragraph {
+    color: var(--paragraphColor);
+    font-weight: 400;
+    font-size: 1.125rem;
+    padding: .9375rem 0;
+}
+
+.buttons {
+    background-color: #fff;
+    width: max-content;
+    margin: 15px auto;
+    padding: .3125rem;
+    display: flex;
+    gap: .625rem;
+    border-radius: .625rem;
+
+}
+
+.buttons__btn {
+    padding: .625rem 1.125rem;
+    border: none;
+    outline: none;
+    border-radius: .625rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.buttons__btn:nth-child(1) {
+    background-color: transparent;
+    color: var(--paragraphColor);
+}
+
+
+.buttons__btn:nth-child(2) {
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+
+/* card */
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 1.5625rem;
+}
+
+.item {
+    --card: #fff;
+    --cardTitle: #141f3d;
+    --cardParagraph: #99a0b1;
+    --cardBenefit: #f9fbfc;
+    --marginTop: 0;
+    --showBtn: none;
+    --bgButtonBuy: #ffff;
+    --shadowBtn: 0 0 6px 0 #00000011;
+    --cardPrimaryColor: #1D64F2;
+    --scale: scale(0.9);
+    --display: none;
+
+    width: 270px;
+    height: max-content;
+    background-color: var(--card);
+    border-radius: .625rem;
+    padding: 20px 0;
+    text-align: center;
+    transform: var(--scale);
+    position: relative;
+    overflow: hidden;
+}
+
+.item::after {
+    content: "";
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: #376ff3;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%) scale(2);
+    z-index: 10;
+    display: var(--display);
+}
+
+.item__title {
+    color: var(--cardTitle);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.item__paragraph {
+    font-size: 13px;
+    padding: 10px 0;
+    color: var(--cardParagraph);
+    font-weight: 600;
+}
+
+.item__price {
+    width: max-content;
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--cardTitle);
+    position: relative;
+    margin: 0 auto;
+    padding: 8px;
+    position: relative;
+    z-index: 20;
+}
+
+.item__price span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: .8rem;
+    font-weight: 900;
+    z-index: 20;
+}
+
+.item__btn {
+    background-color: #ffffff46;
+    color: #ffff;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: .8em;
+    margin: 10px auto;
+    display: var(--showBtn);
+    position: relative;
+    z-index: 20;
+}
+
+.benefits {
+    background-color: var(--cardBenefit);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: var(--marginTop);
+    border-radius: 10px;
+    padding: 20px 0;
+    position: relative;
+    z-index: 15;
+}
+
+.benefits__ul {
+    list-style: none;
+}
+
+.ul__li {
+    padding: 10px 0;
+    text-align: left;
+    font-size: .8em;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.fa-circle-check {
+    color: var(--primaryColor);
+    margin-right: 5px;
+    font-size: 1em;
+}
+
+.buttons__btn--modify {
+    width: 80%;
+    background-color: var(--bgButtonBuy);
+    color: var(--cardPrimaryColor);
+    margin-top: 20px;
+    padding: 13px 0;
+    box-shadow: var(--shadowBtn);
+}
+
+.item:nth-child(2) {
+    --card: #2d69f5;
+    --cardTitle: #ffffff;
+    --cardParagraph: #ececec;
+    --cardBenefit: #ffffff;
+    --marginTop: 25px;
+    --showBtn: block;
+    --bgButtonBuy: #1D64F2;
+    --shadowBtn: none;
+    --cardPrimaryColor: #fff;
+    --scale: scale(1);
+    --display: block;
+}
+
+/* responsive design */
+@media screen and (max-width: 768px) {
+    .price__title {
+        font-size: 1.3em;
+    }
+
+    .price__paragraph {
+        font-size: .9em;
+    }
+
+    .cards {
+        gap: 30px;
+    }
+
+    .item {
+        --scale: scale(1);
+        width: 90%;
+    }
+}
